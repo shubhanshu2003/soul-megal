@@ -1,0 +1,75 @@
+/* Import fancy font */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+/* About Page Wrapper */
+.about-wrapper {
+  height: 100vh;
+  /* margin: 100px auto; */
+  padding: 30px;
+  text-align: center;
+  background: rgba(57, 55, 55, 0.7);
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(255, 0, 255, 0.3);
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  color: white;
+  font-family: 'Dancing Script', cursive;
+}
+
+/* Heading */
+.about-wrapper h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #ff33cc;
+  text-shadow: 0 0 15px rgba(255, 0, 255, 0.8);
+  animation: floatText 3s infinite alternate ease-in-out;
+}
+
+/* Paragraph Styling */
+.about-wrapper p {
+  font-size: 25px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Glowing Effect */
+.about-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255, 0, 255, 0.2), rgba(0, 0, 0, 0.7));
+  z-index: -1;
+  opacity: 0.8;
+}
+.content{
+  margin-top: 200px;
+}
+
+/* Floating Text Animation */
+@keyframes floatText {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-wrapper {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .about-wrapper h2 {
+    font-size: 30px;
+  }
+
+  .about-wrapper p {
+    font-size: 16px;
+  }
+}

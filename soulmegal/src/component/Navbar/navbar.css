@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+
+
+/* src/component/navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space between logo and navbar links */
+    align-items: center; /* Center content vertically */
+    background-color: black; /* Background color for the navbar */
+    color: white; /* Text color */
+    padding: 20px 40px; /* Padding around navbar */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Keep navbar on top */
+  }
+  
+  .navbar-logo {
+    flex: 4; /* Take up available space on the left */
+    display: flex;
+    align-items: center; /* Center the logo vertically */
+  }
+  
+  .navbar-logo h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Dancing script',cursive;
+    color: #fff;
+    font-size: 36px;
+  }
+  
+  .navbar-links {
+    display: flex;
+    justify-content: center; /* Center the navbar links */
+    flex: 3; /* Allow the links to take up available space */
+    gap: 70px; /* Space between the links */
+    
+  }
+  
+  .navbar-item {
+    font-size: 16px;
+  }
+  
+  .navbar-item a {
+    text-decoration: none;
+    color: #fff; /* Link color */
+    font-weight: 500;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .navbar-item a:hover {
+    color: #ff6f61; /* Hover color */
+  }
+  
+  .navbar-item a:active {
+    color: #ff4500; /* Active link color */
+  }
+  
+  /* To prevent content from being hidden behind the navbar */
+  body {
+    padding-top: 30px; /* Adjust based on navbar height */
+  }
+  

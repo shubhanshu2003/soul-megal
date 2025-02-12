@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+/* Fullscreen animated background */
+.home-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: radial-gradient(circle at center,  #6600ff, #000033);
+  animation: bgGlow 6s infinite alternate ease-in-out;
+}
+
+/* Background glow animation */
+@keyframes bgGlow {
+  0% { background: radial-gradient(circle at center,  #6600ff, #000033); }
+  100% { background: radial-gradient(circle at center, #5500cc, #000022); }
+}
+
+
+
+/* Twinkling stars */
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: url("../../assets/twinkle.png") repeat;
+  animation: twinkle 6s infinite alternate ease-in-out;
+  opacity: 0.7;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+/* Floating neon orbs */
+.floating-orbs::before, .floating-orbs::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 255, 255, 0.4);
+  border-radius: 50%;
+  filter: blur(20px);
+  animation: floatOrbs 6s infinite alternate ease-in-out;
+}
+
+.floating-orbs::before { top: 30%; left: 10%; }
+.floating-orbs::after { top: 70%; left: 80%; background: rgba(255, 0, 255, 0.4); }
+
+@keyframes floatOrbs {
+  0% { transform: translateY(-10px); }
+  100% { transform: translateY(10px); }
+}
+
+/* Main content layout */
+.home-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  /* max-width: 1200px; */
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Left Section: Logo & Text */
+.left-section {
+  text-align: center;
+}
+
+.logo {
+  font-size: 60px;
+  font-weight: bold;
+  font-family: "Dancing Script", cursive;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+  color: white;
+  animation: float 3s ease-in-out infinite;
+}
+.dynamic-text {
+  font-size: 20px;
+  color: white;
+  margin-top: 20px;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .logo { font-size: 50px; }
+}
+
+
+/* Get Started Button */
+.get-started-btn {
+  margin-top: 20px;
+  padding: 15px 40px;
+  font-size: 20px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ff0099, #ff9900);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0px 0px 20px rgba(255, 0, 255, 0.5);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Effect */
+.get-started-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 40px rgba(255, 0, 255, 0.8);
+}
+
+/* Button Click Effect */
+.get-started-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0px 0px 10px rgba(255, 0, 255, 0.5);
+}
+
+/* Glowing Effect */
+.get-started-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent);
+  transition: all 0.5s ease-in-out;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.get-started-btn:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+/* Styling the p tag with a glowing effect */
+.slogan {
+  font-family: 'Dancing Script', cursive; /* Use the same font as the logo */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff; /* White text for contrast */
+  text-align: center;
+  margin-top: 20px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff; /* Glowing effect */
+  animation: floatText 3s ease-in-out infinite;
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transitions for interaction */
+}
+
+/* Hover effect for the p tag */
+.slogan:hover {
+  transform: scale(1.05); /* Slight scaling on hover */
+  color: #ff33cc; /* Change color on hover */
+}
+
+/* Keyframes for floating text animation */
+@keyframes floatText {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+
+body, html {
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+}

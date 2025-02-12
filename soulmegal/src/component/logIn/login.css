@@ -1,0 +1,102 @@
+  /* Wrapper for the authentication section */
+  .auth-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #6a1b9a, #ff4081);
+    background-size: cover;
+    padding: 20px;
+    overflow: hidden;
+    color: white;
+  }
+
+  /* Form container */
+  .auth-form {
+    background: rgba(6, 6, 6, 0.6);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+
+  /* Title */
+  .auth-form h2 {
+    font-family: "Dancing Script", cursive;
+    font-size: 36px;
+    color: #020202;
+    text-shadow: #050505;
+    margin-bottom: 30px;
+  }
+
+  /* Input fields */
+  .auth-form input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #ff33cc;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: rgb(10, 10, 10);
+    border-radius: 10px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+  }
+
+  .auth-form input:focus {
+    border-color: #3300ff;
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
+  }
+
+  /* Submit button */
+  .auth-form button {
+    padding: 15px;
+    width: 100%;
+    font-size: 20px;
+    color: white;
+    background: linear-gradient(45deg, #ff0099, #ff9900);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(64, 0, 255, 0.5);
+  }
+
+  .auth-form button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(119, 0, 255, 0.8);
+  }
+
+  .auth-form button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+  }
+
+  /* Sign-up link */
+  .auth-form p {
+    color: rgb(3, 3, 3);
+    font-size: 16px;
+    margin-top: 20px;
+    text-shadow: black;
+  }
+
+  .auth-form p span {
+    color: #ff33cc;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .auth-form p span:hover {
+    color: #ff6f61;
+    transform: scale(1.1);
+  }
+
+  .auth-form p span:active {
+    color: #ff4500;
+    transform: scale(0.95);
+  }
