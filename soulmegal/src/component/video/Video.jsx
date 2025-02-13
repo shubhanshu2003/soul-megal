@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import "./Video.css";
 
 function Video() {
   const myVideoRef = useRef(null);
