@@ -8,7 +8,7 @@ import  FormData  from '../server/model/form.js';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import path from "path";
-import url,{ fileURLToPath } from "url";
+import { fileURLToPath } from "url";
 
 
 const app = express();
@@ -27,8 +27,8 @@ const startServer = async () => {
     console.log('Database synchronized successfully.');
 
     // ✅ Start server after DB sync
-    const server = app.listen(8000, () => {
-      console.log('Server is up on port 8000');
+    const server = app.listen(port, () => {
+      console.log(`Server is up on port ${port}`);
     });
 
     const io = new Server(server, { cors: { origin: '*' } });
