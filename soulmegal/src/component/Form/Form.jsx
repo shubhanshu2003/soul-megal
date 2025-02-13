@@ -23,7 +23,7 @@ const UserForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/user-data", formData);
+      const response = await axios.post("https://soul-megal.onrender.com/form-data", formData);
       console.log("Form Data Submitted:", response.data);
       alert("Data successfully saved!");
     } catch (error) {

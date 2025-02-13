@@ -21,7 +21,7 @@ const Signup = () => {
     const formData = { name, phone, email, password };
 
     try {
-      const response = await axios.post("http://localhost:3000/signup", formData);
+      const response = await axios.post("https://soul-megal.onrender.com/signup", formData);
       console.log("Signup successful:", response.data);
       
       // Redirect to login page after successful signup

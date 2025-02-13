@@ -54,7 +54,8 @@ function start() {
 
 
 // connect at server
-const socket = io('http://localhost:8000');
+//const socket = io('http://localhost:8000');
+const socket = io('https://soul-megal.onrender.com');
 
 
 // Handle the exit button click
