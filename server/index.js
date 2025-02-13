@@ -12,6 +12,7 @@ import url,{ fileURLToPath } from "url";
 
 
 const app = express();
+const port = process.env.PORT || 4000
 app.use(cors());
 app.use(express.json()); // ✅ Middleware to parse JSON body
 
