@@ -221,7 +221,7 @@ const startServer = async () => {
     await sequelize.authenticate();
     await sequelize.sync({ alter: true });
 
-    const server = app.listen(port, () => console.log(`Server running on port ${port}`));
+    const server = app.listen(port,'0.0.0.0', () => console.log(`Server running on port ${port}`));
     const io = new Server(server, { cors: { origin: '*' } });
 
     let onlineUsers = {};  // { userId: socketId }
