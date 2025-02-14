@@ -18,12 +18,10 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 4000;
 
-app.use(
-  cors({
-    origin: [`${process.env.FRONTEND_URL}`], // Allow multiple origins
-    credentials: true, // Allow cookies if needed
-  })
-);
+app.use(cors({
+  origin: `${process.env.FRONTEND_URL}`,
+  methods: ["GET", "POST"]
+}));
 app.use(express.json());
 app.use(helmet());
 
@@ -37,8 +35,16 @@ const startServer = async () => {
     await sequelize.authenticate();
     await sequelize.sync({ alter: true });
 
-    const server = app.listen(port,'0.0.0.0', () => console.log(`Server running on port ${port}`));
-    const io = new Server(server, { cors: { origin: '*' } });
+    const server = app.listen(port, () => console.log(`Server running on port ${port}`));
+    // const io = new Server(server, { cors: { origin: '*' } });
+
+    const io = new Server(server, {
+      cors: {
+        origin: `${process.env.FRONTEND_URL}`,
+        methods: ["GET", "POST"]
+      }
+    });
+
 
     let onlineUsers = {};  // { userId: socketId }
     let userVectors = {};  // { userId: vector }
