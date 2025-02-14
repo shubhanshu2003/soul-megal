@@ -82,7 +82,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("https://soul-megal.onrender.com/user/login", { email, password });
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/user/login`, { email, password });
       // const response = await axios.post("http://localhost:10000/user/login", { email, password });
       
       if (response.data.success) {

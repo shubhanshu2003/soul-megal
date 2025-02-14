@@ -28,7 +28,7 @@ const UserForm = () => {
     e.preventDefault();
     try {
       // Send the form data to the backend
-      const response = await axios.post("https://soul-megal.onrender.com/form/form", formData);
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/form/form`, formData);
       // const response = await axios.post("http://localhost:10000/form/form", formData);
 
       // Log response to the console
