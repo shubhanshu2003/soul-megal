@@ -204,7 +204,7 @@ const port = process.env.PORT || 4000;
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5175"], // Allow multiple origins
+    origin: ["http://localhost:5173", "http://localhost:5175","https://soul-megal-frontend.onrender.com"], // Allow multiple origins
     credentials: true, // Allow cookies if needed
   })
 );
