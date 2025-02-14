@@ -20,7 +20,7 @@ const port = process.env.PORT || 4000;
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5175",], // Allow multiple origins
+    origin: [`${process.env.FRONTEND_URL}`], // Allow multiple origins
     credentials: true, // Allow cookies if needed
   })
 );
