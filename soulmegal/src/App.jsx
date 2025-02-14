@@ -33,7 +33,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./component/Navbar/Navbar";
 import Home from "./component/Home/Home";
-import Video from "./component/Video/Video";
+import Video from "./component/video/Video";
 import Login from "./component/logIn/Login";
 import Signup from "./component/SignUp/SignUp";
 import About from "./component/About/About";
