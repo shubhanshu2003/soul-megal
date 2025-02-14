@@ -1,6 +1,52 @@
+// import { DataTypes } from "sequelize";
+// import sequelize  from "../config/db.js";
+// import User from "../model/user.js";
+
+// const FormData = sequelize.define("UserData", {
+//     id: {
+//       type: DataTypes.UUID,
+//       defaultValue: DataTypes.UUIDV4,
+//       primaryKey: true,
+//     },
+//     hobbies: {
+//       type: DataTypes.STRING,
+//       allowNull: false,
+//     },
+//     gender: {
+//       type: DataTypes.STRING,
+//       allowNull: false,
+//     },
+//     education: {
+//       type: DataTypes.STRING,
+//       allowNull: false,
+//     },
+//     pets: {
+//       type: DataTypes.STRING,
+//       allowNull: true,
+//     },
+//     workout: {
+//       type: DataTypes.STRING,
+//       allowNull: true,
+//     },
+//     drinking: {
+//       type: DataTypes.STRING,
+//       allowNull: true,
+//     },
+//   });
+  
+//   // Establish One-to-One Relationship
+//   User.hasOne(FormData, { foreignKey: "userId", onDelete: "CASCADE" });
+//   FormData.belongsTo(User, { foreignKey: "userId" });
+
+//   export default FormData;
+
+
+
+
+
 import { DataTypes } from "sequelize";
-import sequelize  from "../config/db.js";
-import User from "../model/user.js";
+import sequelize from "../config/db.js";
+import User from "./user.js"; // Import the User model
 
 const FormData = sequelize.define("UserData", {
     id: {
@@ -32,10 +78,14 @@ const FormData = sequelize.define("UserData", {
       type: DataTypes.STRING,
       allowNull: true,
     },
+    vector: {
+      type: DataTypes.ARRAY(DataTypes.FLOAT), // Store embedding as an array of floats
+      allowNull: true,
+    },
   });
-  
-  // Establish One-to-One Relationship
-  User.hasOne(FormData, { foreignKey: "userId", onDelete: "CASCADE" });
-  FormData.belongsTo(User, { foreignKey: "userId" });
 
-  export default FormData;
+User.hasOne(FormData, { foreignKey: "userId", onDelete: "CASCADE" });
+FormData.belongsTo(User, { foreignKey: "userId" });
+
+export default FormData;
+
