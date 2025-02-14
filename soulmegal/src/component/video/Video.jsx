@@ -42,7 +42,7 @@ import { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
 import "./video.css";
 
-const socket = io("http://localhost:10000");
+const socket = io("https://soul-megal.onrender.com");
 
 function Video() {
   const myVideoRef = useRef(null);

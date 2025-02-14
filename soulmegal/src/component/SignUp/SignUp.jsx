@@ -115,7 +115,8 @@ const Signup = () => {
   
     try {
       // Send POST request to backend for signup
-      const response = await axios.post("http://localhost:10000/user/signup", formData);
+      const response = await axios.post("https://soul-megal.onrender.com/user/signup", formData);
+      // const response = await axios.post("http://localhost:10000/user/signup", formData);
   
       // Log the response for success confirmation
       console.log("Signup successful:", response.data);
